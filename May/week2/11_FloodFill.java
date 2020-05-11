@@ -35,17 +35,17 @@
 class Solution {
         public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
             if(image[sr][sc] != newColor){
-                ff(image, sr, sc, image[sr][sc], newColor);
+                fill(image, sr, sc, image[sr][sc], newColor);
             }
             return image;
         }
-        private void ff(int[][] image, int sr, int sc, int prevColor, int newColor){
+        private void fill(int[][] image, int sr, int sc, int prevColor, int newColor){
             if(image[sr][sc] == prevColor){
                 image[sr][sc] = newColor;
-                if(sr > 0) ff(image, sr - 1, sc, prevColor, newColor);
-                if(sc > 0) ff(image, sr, sc - 1, prevColor, newColor);
-                if(sr + 1 < image.length) ff(image, sr + 1, sc, prevColor, newColor);
-                if(sc + 1 < image[0].length) ff(image, sr, sc + 1, prevColor, newColor);
+                if(sr > 0) fill(image, sr - 1, sc, prevColor, newColor);
+                if(sc > 0) fill(image, sr, sc - 1, prevColor, newColor);
+                if(sr + 1 < image.length) fill(image, sr + 1, sc, prevColor, newColor);
+                if(sc + 1 < image[0].length) fill(image, sr, sc + 1, prevColor, newColor);
             }
         }
-    }
+}
