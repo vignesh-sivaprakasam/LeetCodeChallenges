@@ -99,7 +99,7 @@ class Solution {
                         int e = end.get(i);
                         max   = Math.max(max, e - s + 1);
                 }
-                
+       
                 return max;
         }
 }
